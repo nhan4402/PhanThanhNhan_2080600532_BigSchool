@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
 
+
 namespace PhanThanhNhan_2080600532.Controllers
 {   
 
@@ -20,9 +21,9 @@ namespace PhanThanhNhan_2080600532.Controllers
         public ActionResult Index()
         {
             var upcommingCourses = _dbContext.Courses
-           .Include(c => c.Lecturer)
-           .Include(c => c.Category)
-           .Where(c => c.DateTime > DateTime.Now);
+            .Include(c => c.Lecturer)
+            .Include(c => c.Category)
+            .Where(c => c.DateTime > DateTime.Now);
             return View(upcommingCourses);
         }
 
